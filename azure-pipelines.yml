@@ -68,6 +68,10 @@ steps:
   inputs:
     containerRegistry: 'DockerHub'
     repository: 'sample'
+    command: 'build'
+    Dockerfile: '**/Dockerfile'
+
+
     
 - task: Docker@2
   displayName: Docker Push
@@ -76,6 +80,3 @@ steps:
     containerRegistry: 'DockerHub'
     repository: 'sample'
     command: 'push'
-    command: 'build'
-    Dockerfile: '**/Dockerfile'
-
