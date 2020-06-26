@@ -64,7 +64,7 @@ steps:
 
 - task: Docker@2
   displayName: Docker Packaging
-  name: docker build
+  name: DockerBuild
   inputs:
     containerRegistry: 'DockerHub'
     repository: 'sample'
@@ -73,7 +73,7 @@ steps:
 
 - task: Docker@2
   displayName: Docker Push
-  name: docker push
+  name: DockerPush
   inputs:
     containerRegistry: 'DockerHub'
     repository: 'sample'
