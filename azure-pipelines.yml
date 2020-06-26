@@ -11,6 +11,8 @@ pool:
 
 steps:
 - task: Maven@3
+  displayName: Clean Project
+  name: clean
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
@@ -22,6 +24,8 @@ steps:
     goals: 'clean'
 
 - task: Maven@3
+  displayName: Compile Project
+  name: compile
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
@@ -33,6 +37,8 @@ steps:
     goals: 'compile'
 
 - task: Maven@3
+  displayName: Test Project
+  name: test
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
@@ -44,6 +50,8 @@ steps:
     goals: 'test'
 
 - task: Maven@3
+  displayName: Package Project
+  name: package
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
