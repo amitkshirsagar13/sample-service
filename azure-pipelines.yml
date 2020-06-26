@@ -23,12 +23,3 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'clean package'
-
-- task: AzureRmWebAppDeployment@4
-  inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'dev(368eb6b3-4e02-4d22-a05d-767dc9dc4819)'
-    appType: 'webAppLinux'
-    WebAppName: 'sample-spring-boot-application'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
-    RuntimeStack: 'JAVA|8-jre8'
