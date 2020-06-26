@@ -65,7 +65,7 @@
           <resourceGroup>dev</resourceGroup>
           <appName>sample-spring-boot-application</appName>
           <pricingTier>F1</pricingTier>
-          <region>westeurope</region>
+          <region>centralus</region>
           <runtime>
             <os>linux</os>
             <javaVersion>jre8</javaVersion>
