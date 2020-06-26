@@ -15,7 +15,7 @@ steps:
   name: clean
   inputs:
     mavenPomFile: 'pom.xml'
-    mavenOptions: '-Xmx3072m -B -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'
+    mavenOptions: '-Xmx3072m -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
     jdkArchitectureOption: 'x64'
@@ -28,7 +28,7 @@ steps:
   name: compile
   inputs:
     mavenPomFile: 'pom.xml'
-    mavenOptions: '-Xmx3072m -B -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'
+    mavenOptions: '-Xmx3072m -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
     jdkArchitectureOption: 'x64'
@@ -41,7 +41,7 @@ steps:
   name: test
   inputs:
     mavenPomFile: 'pom.xml'
-    mavenOptions: '-Xmx3072m -B -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'
+    mavenOptions: '-Xmx3072m -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
     jdkArchitectureOption: 'x64'
@@ -54,7 +54,7 @@ steps:
   name: package
   inputs:
     mavenPomFile: 'pom.xml'
-    mavenOptions: '-Xmx3072m -B -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'
+    mavenOptions: '-Xmx3072m -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
     jdkArchitectureOption: 'x64'
