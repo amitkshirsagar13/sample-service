@@ -71,8 +71,6 @@ steps:
     command: 'build'
     Dockerfile: '**/Dockerfile'
 
-
-    
 - task: Docker@2
   displayName: Docker Push
   name: docker push
