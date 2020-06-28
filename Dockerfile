@@ -3,5 +3,5 @@ FROM openjdk:8-jre-alpine
 # copy application JAR (with libraries inside)
 COPY target/app.jar /app.jar
 EXPOSE 8080
-# specify default command
+# specify default command trigger
 CMD ["/usr/bin/java", "-jar", "/app.jar"]
