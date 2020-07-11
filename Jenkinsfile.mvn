@@ -1,14 +1,18 @@
 pipeline {
     agent {
-        docker {
-            image 'maven:3-alpine'
-            args '-v $HOME/.m2:/root/.m2'
+        node {
+            label 'slave'
         }
     }
     stages {
-        stage('Build') {
+        stage('Git Branch Fetch') {
             steps {
-                sh 'mvn -B'
+                sh 'git clone https://github.com/amitkshirsagar13/sample-service $(pwd)'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'mvn --version'
             }
         }
     }
