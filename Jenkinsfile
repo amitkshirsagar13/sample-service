@@ -7,10 +7,7 @@ pipeline {
     stages {
         stage('Git Branch Fetch') {
             steps {
-                def proRepo = checkout scm
-                env.gitCommit = proRepo.GIT_COMMIT
-                env.gitBranch = proRepo.GIT_BRANCH.split('/')[1]
-                env.shortGitCommit = "${gitCommit[0..10]}"
+                sh 'git clone https://github.com/amitkshirsagar13/sample-service $(pwd)'
             }
         }
         stage('Test') {
