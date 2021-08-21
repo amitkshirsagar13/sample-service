@@ -10,6 +10,7 @@ class SampleApplicationTests {
 
     @Test
     void contextLoads() {
+        log.info("Run some test!!!");
         log.info("Ran some test!!!");
     }
 
