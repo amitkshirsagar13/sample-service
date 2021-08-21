@@ -13,6 +13,7 @@ class SampleApplicationTests {
         log.info("Run some test!!!");
         log.info("----------------");
         log.info("Ran some test!!!");
+        log.info("----------------");
     }
 
 }
