@@ -2,4 +2,4 @@
 
 Application can be accssed at below link:
 
-[sample-service](https://sample-service.azurewebsites.net/greet/amit/hello)
+`https://sample-service.azurewebsites.net/greet/amit/hello` [sample-service](https://sample-service.azurewebsites.net/greet/amit/hello) 
