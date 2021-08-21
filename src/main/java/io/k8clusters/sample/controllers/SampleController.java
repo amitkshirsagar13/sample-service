@@ -17,6 +17,7 @@ public class SampleController {
     }
     @GetMapping(value = "/{name}/{message}")
     public ResponseEntity<String> getBook(@PathVariable String name, @PathVariable String message) {
+        
         return ResponseEntity.ok(greetingService.greetSomeone(name, message).greetings());
     }
 }
