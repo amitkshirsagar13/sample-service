@@ -14,7 +14,6 @@ public class TestStopWatch {
     }
     private TestStopWatch(TestInfo testInfo) {
         stopWatch = new StopWatch(testInfo.getDisplayName());
-        stopWatch.start(testInfo.getDisplayName());
     }
 
     public static void startTimer(TestInfo testInfo) {
@@ -22,6 +21,7 @@ public class TestStopWatch {
             TestStopWatch inst = new TestStopWatch(testInfo);
             testStopWatch.set(inst);
         }
+        testStopWatch.get().getStopWatch().start(testInfo.getDisplayName());
     }
 
     public static void stopTimer(TestInfo testInfo) {
