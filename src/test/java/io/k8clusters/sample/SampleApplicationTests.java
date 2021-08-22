@@ -49,7 +49,7 @@ public class SampleApplicationTests {
         String name = "Groot";
         String greeting = "I am groot";
 
-        Message message = greetingService.greetSomeone(null, greeting);
+        Message message = greetingService.greetSomeone("", greeting);
         assertNotNull(message);
         log.info("Message: {}", message.greetings());
     }
