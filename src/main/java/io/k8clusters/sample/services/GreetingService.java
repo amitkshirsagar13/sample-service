@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class GreetingService {
     public Message greetSomeone(String name, String message) {
-        log.info("Building Message!!!");
+        log.info("Building Message: {}, {}!!!", name, message);
         return Message.builder().name(name).message(message).build();
     }
 }
