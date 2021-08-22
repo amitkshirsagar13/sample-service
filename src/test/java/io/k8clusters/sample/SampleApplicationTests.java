@@ -48,8 +48,7 @@ public class SampleApplicationTests {
     void checkGreetingMessageWorksWithNull() {
         String name = "Groot";
         String greeting = "I am groot";
-
-        Message message = greetingService.greetSomeone("", greeting);
+        Message message = greetingService.greetSomeone(name, greeting);
         assertNotNull(message);
         log.info("Message: {}", message.greetings());
     }
