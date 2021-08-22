@@ -44,6 +44,16 @@ public class SampleApplicationTests {
         assertEquals("I am groot, Groot!!!", message.greetings());
     }
 
+    @Test
+    void checkGreetingMessageWorksWithNull() {
+        String name = "Groot";
+        String greeting = "I am groot";
+
+        Message message = greetingService.greetSomeone(null, greeting);
+        assertNotNull(message);
+        log.info("Message: {}", message.greetings());
+    }
+
     @AfterEach
     public void clean(TestInfo testInfo) {
         TestStopWatch.stopTimer(testInfo);
