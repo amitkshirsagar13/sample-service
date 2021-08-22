@@ -3,8 +3,10 @@ package io.k8clusters.sample;
 import io.k8clusters.sample.models.Message;
 import io.k8clusters.sample.services.GreetingService;
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInfo;
 import org.springframework.test.context.event.annotation.BeforeTestClass;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -23,16 +25,16 @@ public class SampleApplicationTests {
     public static void staticInit(){
         log.info("Initialized SampleApplicationTests");
     }
-
     @BeforeEach
-    public void init() throws Exception{
-        log.info("Initialize Mocks");
+    public void init(TestInfo testInfo) throws Exception{
+        TestStopWatch.startTimer(testInfo);
+        log.info("Initialize Mocks: {}", testInfo.getDisplayName());
         greetingService = mock(GreetingService.class);
         when(greetingService.greetSomeone(anyString(), anyString())).thenCallRealMethod();
     }
 
     @Test
-    void contextLoads() {
+    void checkGreetingMessageWorks() {
         String name = "Groot";
         String greeting = "I am groot";
 
@@ -40,5 +42,10 @@ public class SampleApplicationTests {
         assertNotNull(message);
         log.info("Message: {}", message.greetings());
         assertEquals("I am groot, Groot!!!", message.greetings());
+    }
+
+    @AfterEach
+    public void clean(TestInfo testInfo) {
+        TestStopWatch.stopTimer(testInfo);
     }
 }
