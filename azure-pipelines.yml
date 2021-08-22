@@ -17,6 +17,7 @@ steps:
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'
+    options: '--no-transfer-progress'
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.11'
     jdkArchitectureOption: 'x64'
@@ -28,6 +29,7 @@ steps:
   displayName: Build Docker image
   inputs:
     mavenPomFile: 'pom.xml'
+    options: '--no-transfer-progress'
     goals: 'spring-boot:build-image'
     publishJUnitResults: false
     jdkVersionOption: '1.11'
