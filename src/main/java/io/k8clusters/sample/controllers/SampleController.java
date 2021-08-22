@@ -19,11 +19,11 @@ public class SampleController {
 
     @GetMapping(value = "/{name}/{message}")
     public ResponseEntity<String> greet(@PathVariable String name, @PathVariable String message) {
-        return ResponseEntity.ok(greetingService.greetSomeone(String.format("%s", name), String.format("%s", message)).greetings());
+        return ResponseEntity.ok(greetingService.greet(String.format("%s", name), String.format("%s", message)).greetings());
     }
 
     @GetMapping(value = "/message/{name}/{message}")
     public ResponseEntity<Message> greetMessage(@PathVariable String name, @PathVariable String message) {
-        return ResponseEntity.ok(greetingService.greetSomeone(String.format("%s", name), String.format("%s", message)));
+        return ResponseEntity.ok(greetingService.greet(String.format("%s", name), String.format("%s", message)));
     }
 }

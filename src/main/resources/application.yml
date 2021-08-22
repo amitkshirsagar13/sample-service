@@ -6,3 +6,10 @@ server:
   port: ${port:80}
   servlet:
 #    context-path: /sample-service-rest
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health-path,health,info,prometheus

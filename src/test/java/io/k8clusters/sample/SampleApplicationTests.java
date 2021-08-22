@@ -30,7 +30,7 @@ public class SampleApplicationTests {
         TestStopWatch.startTimer(testInfo);
         log.info("Initialize Mocks: {}", testInfo.getDisplayName());
         greetingService = mock(GreetingService.class);
-        when(greetingService.greetSomeone(anyString(), anyString())).thenCallRealMethod();
+        when(greetingService.greet(anyString(), anyString())).thenCallRealMethod();
     }
 
     @Test
@@ -38,7 +38,7 @@ public class SampleApplicationTests {
         String name = "Groot";
         String greeting = "I am groot";
 
-        Message message = greetingService.greetSomeone(name, greeting);
+        Message message = greetingService.greet(name, greeting);
         assertNotNull(message);
         log.info("Message: {}", message.greetings());
         assertEquals("I am groot, Groot!!!", message.greetings());
@@ -48,7 +48,7 @@ public class SampleApplicationTests {
     void checkGreetingMessageWorksWithNull() {
         String name = "Groot";
         String greeting = "I am groot";
-        Message message = greetingService.greetSomeone(name, greeting);
+        Message message = greetingService.greet(name, greeting);
         assertNotNull(message);
         log.info("Message: {}", message.greetings());
     }
