@@ -13,6 +13,6 @@ public class SampleApplication {
     }
     @RequestMapping("/")
     public String index() {
-        return "Hello, Sample Spring Boot!!!";
+        return "Hello, Unfeatured Sample Spring Boot!!!";
     }
 }
