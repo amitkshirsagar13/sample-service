@@ -16,7 +16,7 @@ steps:
   name: package
   inputs:
     mavenPomFile: 'pom.xml'
-    goals: 'clean test package'
+    goals: 'clean test package spring-boot:build-image'
     options: '--no-transfer-progress'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
@@ -31,15 +31,6 @@ steps:
     sonarQubeRunAnalysis: false
     checkStyleRunAnalysis: true
     findBugsRunAnalysis: true
-
-- task: Maven@3
-  displayName: Build Docker image
-  inputs:
-    mavenPomFile: 'pom.xml'
-    options: '--no-transfer-progress'
-    goals: 'spring-boot:build-image'
-    publishJUnitResults: false
-    jdkVersionOption: '1.11'
 
 - task: CopyFiles@2
   displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
