@@ -1,9 +1,7 @@
-pipeline {
-  stage {
-    stage('Build') {
-      steps {
-        build()
-      }
+stage {
+  stage('Build') {
+    steps {
+      build()
     }
   }
 }
