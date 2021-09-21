@@ -1,13 +1,9 @@
 node {
   stage('Build') {
-    steps {
-      build()
-    }
+    build()
   }
   stage('Deploy') {
-    steps {
-      deploy_to dev
-      deploy_to test
-    }
+    deploy_to dev
+    deploy_to test
   }
 }
