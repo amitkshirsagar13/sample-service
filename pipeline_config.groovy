@@ -1,5 +1,5 @@
 libraries {
-  ansible{
+  ansible {
     nodeLabel = "linux"
   }
   maven 
