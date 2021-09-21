@@ -2,6 +2,7 @@ libraries {
   ansible {
     nodeLabel = "linux"
   }
+  git
   maven 
 }
 
