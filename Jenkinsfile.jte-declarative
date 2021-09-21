@@ -4,8 +4,12 @@ pipeline {
     maven 'maven'
   }
   stages {
-    script {
-      clone('https://github.com/amitkshirsagar13/sample-service.git')
+    stage('Git Checkout') {
+      steps {
+        script {
+          clone('https://github.com/amitkshirsagar13/sample-service.git')
+        }
+      }
     }
     stage('Build') {
       steps {
