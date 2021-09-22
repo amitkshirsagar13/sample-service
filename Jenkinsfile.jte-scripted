@@ -6,15 +6,15 @@ node {
       "PATH+MVN=${mvnHome}/bin",
       "M2_HOME=${mvnHome}"
   ]
-  stage('Git Clone') {
-    clone()
-  }
   withEnv(mvnEnv) {
     stage ('Initialize') {
         sh '''
             echo "PATH = ${PATH}"
             echo "M2_HOME = ${M2_HOME}"
         '''
+    }
+    stage('Git Clone') {
+      clone('https://github.com/amitkshirsagar13/sample-service.git')
     }
     stage('Build') {
       build()
