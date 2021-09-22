@@ -13,6 +13,9 @@ node {
             echo "M2_HOME = ${M2_HOME}"
         '''
     }
+    stage('Git Clone') {
+      clone()
+    }
     stage('Build') {
       build()
     }
