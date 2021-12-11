@@ -8,6 +8,10 @@ pipeline {
       steps {
         script {
           clone('https://github.com/amitkshirsagar13/sample-service.git')
+          userInfo_Id = userInfo('USERID')
+          sh """
+            echo $userInfo_Id
+          """
         }
       }
     }
