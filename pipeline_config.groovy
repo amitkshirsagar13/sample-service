@@ -1,4 +1,5 @@
 libraries {
+  jenkins
   ansible {
     nodeLabel = "linux"
   }
